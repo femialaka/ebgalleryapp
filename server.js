@@ -28,7 +28,7 @@ console.log(process.env.RDS_PORT)
 // });
 
 app.get('/', (req, res) => {
-  res.send('Lets go baby! Its time to rock,come on heloooo!!!');
+  res.send('Lets go baby! Its time to rock,come on helloo!!!');
 });
 
 
