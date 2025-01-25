@@ -3,19 +3,19 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const client = new Client({
-  host     : process.env.RDS_HOSTNAME,
-  user     : process.env.RDS_USERNAME,
-  database : process.env.RDS_DB_NAME,
-  password : process.env.RDS_PASSWORD,
-  port     : process.env.RDS_PORT || 5432
-});
+// const client = new Client({
+//   host     : process.env.RDS_HOSTNAME,
+//   user     : process.env.RDS_USERNAME,
+//   database : process.env.RDS_DB_NAME,
+//   password : process.env.RDS_PASSWORD,
+//   port     : process.env.RDS_PORT || 5432
+// });
 
-console.log(process.env.RDS_HOSTNAME)
-console.log(process.env.RDS_USERNAME)
-console.log(process.env.RDS_PASSWORD)
-console.log(process.env.RDS_DB_NAME)
-console.log(process.env.RDS_PORT)
+// console.log(process.env.RDS_HOSTNAME)
+// console.log(process.env.RDS_USERNAME)
+// console.log(process.env.RDS_PASSWORD)
+// console.log(process.env.RDS_DB_NAME)
+// console.log(process.env.RDS_PORT)
 
 // client.connect(function(err) {
 //   if (!err) {
