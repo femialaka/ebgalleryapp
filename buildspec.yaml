@@ -5,14 +5,4 @@ phases:
     runtime-versions:
       nodejs: 22
     commands:
-      - echo Installing dependencies...
-      - npm install
-
-  build:
-    commands:
-      - echo Packaging the application...
-      - zip -r mygallery.zip . # Create a zip file of the app
-
-artifacts:
-  files:
-    - mygallery.zip
+      - npm install  # or yarn install
