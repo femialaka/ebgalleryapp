@@ -18,7 +18,7 @@ console.log(process.env.RDS_DB_NAME)
 console.log(process.env.RDS_PORT)
 
 app.get('/', (req, res) => {
-  res.send('Lets go baby! Its heck time to rock,come on db Update NEWWW!!!');
+  res.send('Lets go baby! Its heck time to rock,come Update NEWWW!!!');
 });
 
 
