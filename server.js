@@ -15,11 +15,15 @@ const client = new Client({
 
   await client.connect()
 
-  console.log(process.env.RDS_HOSTNAME)
-  console.log(process.env.RDS_USERNAME)
-  console.log(process.env.RDS_PASSWORD)
-  console.log(process.env.RDS_DB_NAME)
-  console.log(process.env.RDS_PORT)
+  console.log(await client.query('SELECT NOW()'))
+ 
+  await client.end()
+
+  // console.log(process.env.RDS_HOSTNAME)
+  // console.log(process.env.RDS_USERNAME)
+  // console.log(process.env.RDS_PASSWORD)
+  // console.log(process.env.RDS_DB_NAME)
+  // console.log(process.env.RDS_PORT)
 
 
 
