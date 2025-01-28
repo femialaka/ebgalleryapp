@@ -2,8 +2,7 @@ const cors = require("cors");
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-import pg from 'pg'
-const { Client } = pg
+const { Client } = rquire("pg");
 
 const client = new Client({
   host     : process.env.RDS_HOSTNAME,
@@ -25,12 +24,6 @@ try {
 catch(error) {
   console.error("Error retrieving artworks:", error);
 }
-
-
-
-
-
-
 
 app.get('/', (req, res) => {
   res.send('Lets go baby! Its heck time to rock,come Update WHY is it not working NEWWWWWWW!!!');
