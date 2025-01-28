@@ -38,7 +38,7 @@ const upload = multer({ storage });
 app.post("/upload", upload.single("image"), async (req, res) => {
   try {
     const file = req.file;
-    if (!file) return res.status(400).json({ error: "No file uploaded NEW" });
+    if (!file) return res.status(400).json({ error: "No file uploaded NEW !!" });
 
     const fileName = `${Date.now()}-${file.originalname}`;
     
