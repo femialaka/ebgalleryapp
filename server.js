@@ -53,7 +53,7 @@ app.get('/artworks/:id', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Lets go baby! Its heck time to rock,come Update NEWWWWWWW!!!');
+  res.send('Lets go baby! Its heck time to rock,come Update WHY is it not working NEWWWWWWW!!!');
 });
 
 
