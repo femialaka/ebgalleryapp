@@ -1,16 +1,20 @@
-const {Client} = require('pg');
+const {Pool} = require('pg');
 const cors = require("cors");
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const client = new Client({
+const pool = new Pool({
   host     : process.env.RDS_HOSTNAME,
   user     : process.env.RDS_USERNAME,
   database : process.env.RDS_DB_NAME,
   password : process.env.RDS_PASSWORD,
   port     : process.env.RDS_PORT || 5432
 });
+
+pool.connect()
+  .then(() => console.log("Connected to PostgreSQL on RDS"))
+  .catch(err => console.error("Connection error", err));
 
 console.log(process.env.RDS_HOSTNAME)
 console.log(process.env.RDS_USERNAME)
@@ -23,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🚀 Retrieve all artworks
-app.get("/artworks", async (req, res) => {
+app.get('/artworks', async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM artworks");
     res.json(result.rows);
@@ -34,7 +38,7 @@ app.get("/artworks", async (req, res) => {
 });
 
 // 🚀 Retrieve artwork by ID
-app.get("/artworks/:id", async (req, res) => {
+app.get('/artworks/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await pool.query("SELECT * FROM artworks WHERE id = $1", [id]);
