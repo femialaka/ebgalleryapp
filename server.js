@@ -12,7 +12,7 @@ const client = new Client({
   port     : process.env.RDS_PORT || 5432
 });
 
-try {
+
   await client.connect()
 
   console.log(process.env.RDS_HOSTNAME)
@@ -20,10 +20,8 @@ try {
   console.log(process.env.RDS_PASSWORD)
   console.log(process.env.RDS_DB_NAME)
   console.log(process.env.RDS_PORT)
-}
-catch(error) {
-  console.error("Error retrieving artworks:", error);
-}
+
+
 
 app.get('/', (req, res) => {
   res.send('Lets go baby! Its heck time to rock,come Update WHY is it not working NEWWWWWWW!!!');
