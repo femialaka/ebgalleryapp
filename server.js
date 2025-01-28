@@ -1,10 +1,10 @@
-const {Client} = require('pg');
+const {Pool} = require('pg');
 const cors = require("cors");
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const client = new Client({
+const pool = new Pool({
   host     : process.env.RDS_HOSTNAME,
   user     : process.env.RDS_USERNAME,
   database : process.env.RDS_DB_NAME,
@@ -18,7 +18,7 @@ console.log(process.env.RDS_PASSWORD)
 console.log(process.env.RDS_DB_NAME)
 console.log(process.env.RDS_PORT)
 
-client.connect()
+pool.connect()
   .then(() => console.log("Connected to PostgreSQL on RDS"))
   .catch(err => console.error("Connection error", err));
 
